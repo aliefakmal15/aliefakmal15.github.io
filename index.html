@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Portfolio for SCST1133 Data Engineering Ecosystem">
+  <title>Muhammad Alief Akmal Shah | SCST1133 E-Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --accent: #0d9488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+      line-height: 1.65;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+      color: #ffffff;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.12);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e7ff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #334155;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    article {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+    }
+
+    article h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      margin: 1rem 0;
+      border: 2px dashed #94a3b8;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .image-placeholder p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    .work-meta {
+      list-style: none;
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .work-meta li {
+      font-size: 0.9rem;
+      background: #ffffff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .work-meta strong {
+      color: var(--primary);
+    }
+
+    .reflection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .reflection-card {
+      background: #f8fafc;
+      padding: 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .reflection-card h4 {
+      font-size: 1rem;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      background-color: #ffffff;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muhammad Alief Akmal Shah</h1>
+    <p>SCST1133 Data Engineering Ecosystem &bull; Universiti Teknologi Malaysia</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Selected Work</a>
+      <a href="#reflection">Course Reflection</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Professional Profile Section -->
+    <section id="about">
+      <h2>Professional Profile</h2>
+      <p>
+        I am a dedicated undergraduate studying <strong>Bachelor of Computer Science (Data Engineering)</strong> at 
+        <strong>Universiti Teknologi Malaysia (UTM)</strong>. My academic pursuits center around data pipeline architecture, 
+        systems programming, database design, and practical AIoT implementations.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        Through the SCST1133 Data Engineering Ecosystem course, I explore how modern software engineering paradigms, 
+        design thinking frameworks, and scalable cloud/data storage infrastructures intersect to solve complex computational problems.
+      </p>
+      <div class="badge-container">
+        <span class="badge">Data Engineering</span>
+        <span class="badge">C++ &amp; Python</span>
+        <span class="badge">SQL &amp; Relational Modeling</span>
+        <span class="badge">Design Thinking</span>
+        <span class="badge">Git &amp; GitHub</span>
+      </div>
+    </section>
+
+    <!-- Selected Work Section -->
+    <section id="work">
+      <h2>Selected Work</h2>
+      <article>
+        <h3>Design Thinking &amp; Figma Prototype</h3>
+        <p>
+          This project applies human-centered design principles to conceptualize and prototype an intuitive digital interface 
+          aimed at streamlining data workflows and user interactions.
+        </p>
+
+        <!-- Image container with fallback placeholder -->
+        <div class="image-placeholder">
+          <img src="images/project-screenshot.png" 
+               alt="Screenshot of Figma prototype" 
+               style="max-width: 100%; max-height: 220px; object-fit: contain; display: block;"
+               onerror="this.style.display='none';">
+          <span><strong>Prototype Screenshot</strong></span>
+          <p>Place your exported UI screenshot inside <code>images/project-screenshot.png</code></p>
+        </div>
+
+        <ul class="work-meta">
+          <li><strong>Role:</strong> UI/UX Prototyping &amp; Flow Design</li>
+          <li><strong>Tools:</strong> Figma, Design Thinking Canvas</li>
+          <li><strong>Focus:</strong> User Empathy &amp; Interactive Flow</li>
+        </ul>
+
+        <p>
+          <strong>Contribution &amp; Key Insights:</strong> Facilitated user journey mapping, conducted empathy interviews 
+          to identify end-user friction points, and produced high-fidelity wireframes in Figma demonstrating seamless 
+          navigation across dashboards and data monitoring modules.
+        </p>
+      </article>
+    </section>
+
+    <!-- Course Reflection Section -->
+    <section id="reflection">
+      <h2>Course Reflection</h2>
+      <p>
+        The SCST1133 Data Engineering Ecosystem module provides crucial foundations for understanding the complete life cycle 
+        of data—from collection, modeling, and processing to storage and front-end delivery.
+      </p>
+
+      <div class="reflection-grid">
+        <div class="reflection-card">
+          <h4>Core Learnings</h4>
+          <p>
+            Gained a deep appreciation for collaborative software engineering workflows, agile development methodologies, 
+            and how human-centered design complements back-end technical architectures.
+          </p>
+        </div>
+
+        <div class="reflection-card">
+          <h4>Areas for Improvement</h4>
+          <p>
+            Aiming to further refine end-to-end cloud pipeline automation, optimize SQL querying for distributed environments, 
+            and implement CI/CD checks for future data infrastructure projects.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Alief Akmal Shah &bull; SCST1133 Data Engineering Ecosystem</p>
+  </footer>
+</body>
+</html>
